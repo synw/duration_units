@@ -1,0 +1,12 @@
+name: duration_units_example
+description: A new Flutter project.
+version: 0.0.1
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  pedantic: ^1.8.0
+  extra_pedantic: ^1.1.1+3
+  duration_units:
+    path: ../

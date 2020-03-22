@@ -1,0 +1,10 @@
+name: duration_units
+description: Humanized duration units. Get the elapsed units
+version: 0.0.1
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  pedantic: ^1.8.0
+  extra_pedantic: ^1.1.1+3
