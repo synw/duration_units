@@ -4,8 +4,8 @@ extension DurationUnits on Duration {
   int get days {
     var d = 0;
     final secs = this.inSeconds;
-    if (secs > Duration.secondsPerDay) {
-      d = int.parse((secs / Duration.secondsPerDay).toStringAsFixed(0));
+    if (secs >= Duration.secondsPerDay) {
+      d = secs ~/ Duration.secondsPerDay;
     }
     return d;
   }
@@ -14,8 +14,8 @@ extension DurationUnits on Duration {
   int get hours {
     var h = 0;
     final d = this - Duration(days: days);
-    if (d.inSeconds > Duration.secondsPerHour) {
-      h = int.parse((d.inSeconds / Duration.secondsPerHour).toStringAsFixed(0));
+    if (d.inSeconds >= Duration.secondsPerHour) {
+      h = d.inSeconds ~/ Duration.secondsPerHour;
     }
     return h;
   }
@@ -24,9 +24,8 @@ extension DurationUnits on Duration {
   int get minutes {
     var h = 0;
     final d = this - Duration(days: days, hours: hours);
-    if (d.inSeconds > Duration.secondsPerMinute) {
-      h = int.parse(
-          (d.inSeconds / Duration.secondsPerMinute).toStringAsFixed(0));
+    if (d.inSeconds >= Duration.secondsPerMinute) {
+      h = d.inSeconds ~/ Duration.secondsPerMinute;
     }
     return h;
   }
